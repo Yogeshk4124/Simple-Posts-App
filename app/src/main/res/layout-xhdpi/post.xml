@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#121212">
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/head"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                android:text="Create Post"
+                android:textColor="#FFFFFF"
+                android:textSize="40sp" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/Event_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/head"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:hint="Event Name"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:met_baseColor="@color/colorPrimary"
+                app:met_clearButton="true"
+                app:met_floatingLabel="highlight"
+                app:met_floatingLabelTextColor="@color/colorPrimary"
+                app:met_textColor="#FFFFFF"
+                app:met_textColorHint="#FFFFFF" />
+
+            <!--    <com.rengwuxian.materialedittext.MaterialEditText-->
+            <!--        android:id="@+id/Event_category"-->
+            <!--        android:layout_width="match_parent"-->
+            <!--        android:layout_height="wrap_content"-->
+            <!--        android:layout_below="@+id/Event_name"-->
+            <!--        android:layout_marginLeft="30dp"-->
+            <!--        android:layout_marginTop="20dp"-->
+            <!--        android:hint="Event Category"-->
+            <!--        android:textColor="#FFFFFF"-->
+            <!--        android:textSize="20sp"-->
+            <!--        app:met_baseColor="@color/colorPrimary"-->
+            <!--        app:met_clearButton="true"-->
+            <!--        app:met_floatingLabel="highlight"-->
+            <!--        app:met_floatingLabelTextColor="@color/colorPrimary"-->
+            <!--        app:met_textColor="#FFFFFF"-->
+            <!--        app:met_textColorHint="#FFFFFF" />-->
+
+            <com.skydoves.powerspinner.PowerSpinnerView
+                android:id="@+id/Event_category"
+                android:layout_width="wrap_content"
+                android:layout_below="@+id/Event_name"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/round_sp"
+                android:gravity="center"
+                android:hint="-Select Category-"
+                android:padding="10dp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:textSize="17sp"
+                app:spinner_arrow_gravity="end"
+                app:spinner_arrow_padding="8dp"
+                app:spinner_divider_color="#FFFFFF"
+                app:spinner_item_array="@array/Category"
+                app:spinner_popup_animation="dropdown"
+                app:spinner_popup_background="#121212"
+                app:spinner_popup_elevation="14dp" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/Event_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Event_category"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:hint="Event Description"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:lines="5"
+                android:maxEms="100"
+                app:met_baseColor="@color/colorPrimary"
+                app:met_clearButton="true"
+                app:met_floatingLabel="highlight"
+                app:met_floatingLabelTextColor="@color/colorPrimary"
+                app:met_textColor="#FFFFFF"
+                app:met_textColorHint="#FFFFFF" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/Event_date"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Event_description"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                android:hint="Event Date"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                app:met_baseColor="@color/colorPrimary"
+                app:met_clearButton="true"
+                app:met_floatingLabel="highlight"
+                app:met_floatingLabelTextColor="@color/colorPrimary"
+                app:met_textColor="#FFFFFF"
+                app:met_textColorHint="#FFFFFF" />
+            <Button
+                android:id="@+id/Select_Date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Event_description"
+                android:background="@drawable/round_button"
+                android:backgroundTint="@color/colorPrimary"
+                android:layout_marginTop="30dp"
+                android:layout_toRightOf="@+id/Event_date"
+                android:paddingLeft="10dp"
+                android:layout_marginLeft="1dp"
+                android:paddingRight="10dp"
+                android:textSize="13sp"
+                android:text="Select Date"
+                android:textColor="#000000"
+                tools:layout_editor_absoluteX="131dp"
+                tools:layout_editor_absoluteY="516dp" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/Event_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Event_date"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="20dp"
+                android:hint="Event Location"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                app:met_baseColor="@color/colorPrimary"
+                app:met_clearButton="true"
+                app:met_floatingLabel="highlight"
+                app:met_floatingLabelTextColor="@color/colorPrimary"
+                app:met_textColor="#FFFFFF"
+                app:met_textColorHint="#FFFFFF" />
+
+            <Button
+                android:id="@+id/Upload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Event_location"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/round_button"
+                android:backgroundTint="@color/colorPrimary"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:text="Upload" />
+            <Button
+                android:id="@+id/SeePost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Event_location"
+                android:background="@drawable/round_button"
+                android:backgroundTint="@color/colorPrimary"
+                android:layout_marginTop="30dp"
+                android:layout_toRightOf="@+id/Upload"
+                android:paddingLeft="30dp"
+                android:layout_marginLeft="50dp"
+                android:paddingRight="30dp"
+                android:text="See Post"
+                android:textColor="#000000"
+                tools:layout_editor_absoluteX="131dp"
+                tools:layout_editor_absoluteY="516dp" />
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

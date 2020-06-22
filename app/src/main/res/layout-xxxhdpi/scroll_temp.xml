@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:background="#121212"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/Event_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/event_name"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/Event_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Event_name"
+        android:text="@string/event_category"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/Event_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Event_category"
+        android:layout_marginTop="10dp"
+        android:text="@string/description"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/Event_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Event_description"
+        android:layout_marginTop="10dp"
+        android:text="@string/event_date"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/Event_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Event_date"
+        android:layout_marginTop="10dp"
+        android:text="@string/event_location"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/Event_location"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="30dp"
+        android:background="#FFFFFF" />
+
+</RelativeLayout>
