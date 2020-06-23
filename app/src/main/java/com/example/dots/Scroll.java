@@ -1,5 +1,7 @@
 package com.example.dots;
 
+import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.text.SpannableString;
@@ -28,11 +30,15 @@ import java.util.Collections;
 import java.util.Locale;
 
 public class Scroll extends AppCompatActivity {
+    ProgressDialog pd;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.scroll);
+        setContentView(R.layout.dscroll);
         final ListView list=findViewById(R.id.listView);
+        pd=new ProgressDialog(Scroll.this);
+        pd.setMessage("Loading Post");
+        pd.show();
         Query Q= FirebaseDatabase.getInstance().getReference("Posts").orderByChild("id");
         final ArrayList<String>array_name = new ArrayList<>(),array_category = new ArrayList<>(),array_description = new ArrayList<>(),array_date = new ArrayList<>(),array_location = new ArrayList<>();
         Q.addValueEventListener(new ValueEventListener() {
@@ -56,6 +62,7 @@ public class Scroll extends AppCompatActivity {
                 Collections.reverse(date);
                 Collections.reverse(location);
                 MyAdapter myAdapter=new MyAdapter(getApplicationContext(),name,category,description,date,location);
+                pd.dismiss();
                 list.setAdapter(myAdapter);
             }
 
@@ -75,7 +82,7 @@ public class Scroll extends AppCompatActivity {
         ArrayList<String> e_name,e_category,e_description,e_date,e_location;
 
         MyAdapter (Context c, ArrayList<String> name,ArrayList<String> category, ArrayList<String> description, ArrayList<String> date,ArrayList<String> location) {
-            super(c, R.layout.scroll_temp, R.id.Event_name,name);
+            super(c, R.layout.dscroll_temp, R.id.Event_name,name);
             this.context = c;
 
             this.e_name= name;
@@ -88,7 +95,7 @@ public class Scroll extends AppCompatActivity {
         @Override
         public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
             LayoutInflater layoutInflater = (LayoutInflater)getContext().getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View row = layoutInflater.inflate(R.layout.scroll_temp, parent, false);
+            View row = layoutInflater.inflate(R.layout.dscroll_temp, parent, false);
 //            Toast.makeText(Scroll.this,"pos:"+position,Toast.LENGTH_LONG).show();
             TextView event_name = row.findViewById(R.id.Event_name);
             TextView event_date=row.findViewById(R.id.Event_date);
@@ -99,10 +106,10 @@ public class Scroll extends AppCompatActivity {
             content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
             event_name.setText(content);
 //            event_name.setText(e_name.get(position));
-            event_category.setText("Event Category: "+e_category.get(position));
-            event_location.setText("Event Location: "+e_location.get(position));
-            event_date.setText("Event Date: "+e_date.get(position));
-            event_description.setText("Event Description:\n"+e_description.get(position));
+            event_category.setText("Category: "+e_category.get(position));
+            event_location.setText("Location: "+e_location.get(position));
+            event_date.setText("Date: "+e_date.get(position));
+            event_description.setText("Description:\n"+e_description.get(position));
             return row;
         }
     }

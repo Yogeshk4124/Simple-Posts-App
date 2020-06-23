@@ -23,7 +23,6 @@ import com.skydoves.powerspinner.OnSpinnerOutsideTouchListener;
 import com.skydoves.powerspinner.PowerSpinnerView;
 
 import java.util.Calendar;
-import java.util.Date;
 import java.util.HashMap;
 
 public class Post extends AppCompatActivity implements DatePickerDialog.OnDateSetListener{
@@ -33,7 +32,7 @@ public class Post extends AppCompatActivity implements DatePickerDialog.OnDateSe
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.post);
+        setContentView(R.layout.dpost);
         Button Upload=findViewById(R.id.Upload);
         event_name=findViewById(R.id.Event_name);
         event_date=findViewById(R.id.Event_date);

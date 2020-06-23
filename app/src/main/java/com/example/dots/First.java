@@ -11,17 +11,18 @@ import androidx.annotation.IntegerRes;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 public class First extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.first_screen);
-        ImageView i=findViewById(R.id.im);
-        i.setClipToOutline(true);
-        Button User=findViewById(R.id.User);
-        Button Admin=findViewById(R.id.Admin);
+        setContentView(R.layout.dfirst_screen);
+//        ImageView i=findViewById(R.id.im);
+//        i.setClipToOutline(true);
+        CardView User=findViewById(R.id.usercard);
+        CardView Admin=findViewById(R.id.admincard);
         User.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">DOTS</string>
-    <string name="event_name"><u>Event Name</u></string>
-    <string name="event_category"><u>Event Category</u></string>
+    <string name="event_name"><u>Name</u></string>
+    <string name="event_category"><u>Category</u></string>
     <string name="description">Description</string>
-    <string name="event_date">Event Date</string>
-    <string name="event_location">Event Location</string>
+    <string name="event_date">Date</string>
+    <string name="event_location">Location</string>
     <string-array name="Category">
         <item>Webinar</item>
         <item>Seminar</item>

@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.dactivity_main);
         Toast.makeText(MainActivity.this,"Email:admin@gmail.com\nPassword:admin123",Toast.LENGTH_LONG).show();
         final FirebaseAuth auth= FirebaseAuth.getInstance();
         Button SignIn=findViewById(R.id.SignIn);
